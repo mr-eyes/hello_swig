@@ -5,6 +5,9 @@
 #include "hello.hpp" // including kDataframe
 %}
 
+%include std_string.i       /*And this for converting python str to C++ std::string*/
+
+
 void hello();
 
 std::string get_hello();
