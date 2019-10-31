@@ -10,6 +10,12 @@ except ImportError:
     from distutils.core import setup, Extension
 
 
+if not find_executable('swig'):
+    sys.exit("Error:  Building this module requires 'swig' to be installed")
+
+# if not os.path.exists('build/libhelloSwig.a'):
+
+
 SOURCES = [
     'interface.i',
 ]
