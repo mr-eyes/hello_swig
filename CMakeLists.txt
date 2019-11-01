@@ -2,7 +2,7 @@
 # hello_swig
 # ----------------------------------------------------------------------------
 
-cmake_minimum_required (VERSION 3.4)
+cmake_minimum_required (VERSION 2.8)
 project (helloSwig C CXX)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
