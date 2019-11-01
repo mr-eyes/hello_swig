@@ -53,7 +53,7 @@ helloSwig_module = Extension('_helloSwig',
                               libraries=LIBRARIES,
                               sources=SOURCES,
                               include_dirs=INCLUDES,
-                              extra_compile_args = ["-O3", "-Ofast", "-std=c++17"],
+                              extra_compile_args = ["-O3", "-Ofast"],
                               swig_opts=SWIG_OPTS,
                               )
 
