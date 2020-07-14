@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+export PATH=/home/travis/miniconda3/bin:$PATH
+source activate test
 
 mkdir build && cd build
 cmake .. && make
