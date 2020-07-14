@@ -23,7 +23,6 @@ before_install:
     - ./miniconda3.sh -b
     - export PATH=/home/travis/miniconda3/bin:$PATH
     - conda update --yes conda
-    - before_install
 
 install:
   - python3 -m pip install cibuildwheel==1.5.2
@@ -38,6 +37,7 @@ install:
 
 script:
   # build the wheels, put them into './wheelhouse'
+  # - CIBW_BEFORE_ALL: build.sh
   - python3 -m cibuildwheel --output-dir wheelhouse
 
 after_success:
