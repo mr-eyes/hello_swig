@@ -45,12 +45,12 @@ script:
   - conda install --yes cmake make
   - conda install -c anaconda libstdcxx-ng -y
   - conda install --yes -c conda-forge swig=4.0.1
-  - python -m pip install cibuildwheel
+  - /home/travis/miniconda3/envs/test/bin/python -m pip install cibuildwheel
   - export CIBW_BEFORE_BUILD='mkdir build && cd build && cmake .. && make && cd .. && bash build.sh'
   # - export CIBW_ENVIRONMENT='PATH="$HOME/rust/bin:$PATH"'
   - cibuildwheel --output-dir wheelhouse
   - |
     if [[ $TRAVIS_TAG ]]; then
-      $PIP install twine
-      $PYTHON -m twine upload wheelhouse/*.whl
+      /home/travis/miniconda3/envs/test/bin/python -m install twine
+      /home/travis/miniconda3/envs/test/bin/python -m twine upload wheelhouse/*.whl
     fi
