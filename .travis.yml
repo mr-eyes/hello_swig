@@ -46,6 +46,7 @@ script:
   - conda install -c anaconda libstdcxx-ng -y
   - conda install --yes -c conda-forge swig=4.0.1
   - /home/travis/miniconda3/envs/test/bin/python -m pip install cibuildwheel
+  - which python
   - export CIBW_BEFORE_BUILD='mkdir build && cd build && cmake .. && make && cd .. && bash build.sh'
   - export CIBW_BUILD='cp36-*'
   # - export CIBW_ENVIRONMENT='PATH="$HOME/rust/bin:$PATH"'
