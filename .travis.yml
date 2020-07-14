@@ -39,7 +39,7 @@ before_install:
     - conda update --yes conda
 
 script:
-  - conda create --yes -n test python=3.8
+  - conda create --yes -n test python=3.6
   - source activate test
   - whereis python
   - conda install --yes cmake make
@@ -47,6 +47,7 @@ script:
   - conda install --yes -c conda-forge swig=4.0.1
   - /home/travis/miniconda3/envs/test/bin/python -m pip install cibuildwheel
   - export CIBW_BEFORE_BUILD='mkdir build && cd build && cmake .. && make && cd .. && bash build.sh'
+  - export CIBW_BUILD='cp36-*'
   # - export CIBW_ENVIRONMENT='PATH="$HOME/rust/bin:$PATH"'
   - cibuildwheel --output-dir wheelhouse
   - |
