@@ -6,13 +6,9 @@ language: python
 jobs:
   include:
     # perform a linux build
-    - services: docker
-    # and a mac build
-    - os: osx
-      language: shell
-    # and a windows build
+    # - services: docker
     - os: linux
-      language: c++
+      # language: c++
 
 env:
   global:
