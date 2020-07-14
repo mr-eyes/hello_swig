@@ -45,7 +45,7 @@ script:
   - conda install -c anaconda libstdcxx-ng -y
   - conda install --yes -c conda-forge swig=4.0.1
   - python -m pip install cibuildwheel
-  - export CIBW_BEFORE_BUILD='export PATH=/home/travis/miniconda3/bin:$PATH && source activate test && mkdir build && cd build && cmake .. && make && cd .. && bash build.sh'
+  - export CIBW_BEFORE_BUILD='export PATH=/home/travis/miniconda3/bin:$PATH && conda activate test && mkdir build && cd build && cmake .. && make && cd .. && bash build.sh'
   # - export CIBW_ENVIRONMENT='PATH="$HOME/rust/bin:$PATH"'
   - cibuildwheel --output-dir wheelhouse
   - |
