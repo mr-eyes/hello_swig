@@ -25,15 +25,20 @@ before_install:
     - conda update --yes conda
 
 install:
+  - make get-deps
   - python3 -m pip install cibuildwheel==1.5.2
   - export PATH=/home/travis/miniconda3/bin:$PATH
   - conda create --yes -n test python=3.8
   - source activate test
   - conda install --yes cmake make
-  - conda install -c anaconda gcc -y
+  # - conda install -c anaconda gcc -y
   - conda install -c anaconda libstdcxx-ng -y
   - conda install --yes -c conda-forge swig=4.0.1
   - bash build.sh
+
+compiler:
+  - clang
+  - gcc
 
 script:
   # build the wheels, put them into './wheelhouse'
