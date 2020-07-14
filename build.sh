@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-export PATH=/home/travis/miniconda3/bin:$PATH
-source activate test
+echo "Building C++ ..."
 
 mkdir build && cd build
 cmake .. && make

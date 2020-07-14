@@ -41,6 +41,7 @@ before_install:
 script:
   - conda create --yes -n test python=3.8
   - source activate test
+  - whereis python
   - conda install --yes cmake make
   - conda install -c anaconda libstdcxx-ng -y
   - conda install --yes -c conda-forge swig=4.0.1
