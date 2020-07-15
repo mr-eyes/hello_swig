@@ -57,7 +57,7 @@ script:
   - swig -version
   - which g++
   - export CIBW_ENVIRONMENT="PATH=/home/travis/miniconda3/bin:$PATH"
-  - export CIBW_BEFORE_ALL='which python && mkdir build && cd build && cmake .. && make && cd ..'
+  - export CIBW_BEFORE_ALL='bash build_in_docker.sh'
   - export CIBW_BUILD='cp36-*'
   - python -m cibuildwheel --output-dir wheelhouse
 
