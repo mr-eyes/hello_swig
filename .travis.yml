@@ -56,7 +56,6 @@ script:
   - which pip
   - swig -version
   - which g++
-  - bash build.sh
   - export CIBW_BEFORE_BUILD='mkdir build && cd build && cmake .. && make && cd ..'
   - export CIBW_BUILD='cp36-*'
   - python -m cibuildwheel --output-dir wheelhouse
