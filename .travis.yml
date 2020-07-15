@@ -56,7 +56,8 @@ script:
   - which pip
   - swig -version
   - which g++
-  - export CIBW_BEFORE_BUILD='mkdir build && cd build && cmake .. && make && cd ..'
+  - export CIBW_ENVIRONMENT="PATH=/home/travis/miniconda3/bin:$PATH"
+  - export CIBW_BEFORE_ALL='source activate test && mkdir build && cd build && cmake .. && make && cd ..'
   - export CIBW_BUILD='cp36-*'
   - python -m cibuildwheel --output-dir wheelhouse
 
