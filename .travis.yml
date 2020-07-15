@@ -1,11 +1,34 @@
 language: python
 
 matrix:
-  # This will launch a separate build for each Python version you add
-  # Feel free to add extra environment variables as needed
   include:
-    # - python: 3.5
-    - python: 3.6
+    # Linux
+    - os: linux
+      sudo: required
+      compiler: 
+        - gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - gcc-7
+            - g++-7
+            - cmake
+            - make
+            - automake
+      env:
+        - MB_PYTHON_VERSION=3.6
+
+env:
+  global:
+    - TWINE_USERNAME=abuelanin
+    # Note: TWINE_PASSWORD is set to a PyPI API token in Travis settings
+
+
+compiler:
+  - clang
+  - gcc
 
 before_install:
   # Install the latest version of Miniconda
@@ -31,3 +54,5 @@ script:
   - which python
   - which pip
   - swig -version
+  - which g++
+  - bash build.sh

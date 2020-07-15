@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 echo "Building C++ ..."
+echo $(which python)
+echo $(whereis swig)
 
-PYTHON=/home/travis/miniconda3/envs/test/bin/python
-rm -rf build
 mkdir build && cd build
 cmake .. && make
 cd ..
