@@ -30,3 +30,4 @@ script:
   # Run any test suite you may have
   - which python
   - which pip
+  - swig -version
