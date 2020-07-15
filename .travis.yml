@@ -38,7 +38,7 @@ compiler:
 #   - export PATH=/home/travis/miniconda3/bin:$PATH
 #   - conda update --yes conda  # Update CONDA without command line prompt
 
-# install:
+install:
 #   # Create a new environment
 #   - conda create --yes -n test python=$TRAVIS_PYTHON_VERSION
 #   # Activate it
@@ -48,13 +48,13 @@ compiler:
 #   - conda install --yes cmake make
 #   - conda install -c anaconda libstdcxx-ng -y
 #   - conda install --yes -c conda-forge swig=4.0.1
-#   - pip install cibuildwheel==1.5.2
+  - pip install cibuildwheel==1.5.2
 
 script:
   # Run any test suite you may have
   - which python
   - which pip
-  - swig -version
+  # - swig -version
   - which g++
   - export CIBW_BEFORE_ALL='bash build_in_docker.sh'
   - export CIBW_BUILD='cp36-*'
