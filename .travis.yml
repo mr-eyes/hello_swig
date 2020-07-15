@@ -48,6 +48,7 @@ install:
   - conda install --yes cmake make
   - conda install -c anaconda libstdcxx-ng -y
   - conda install --yes -c conda-forge swig=4.0.1
+  - pip install cibuildwheel==1.5.2
 
 script:
   # Run any test suite you may have
@@ -56,3 +57,14 @@ script:
   - swig -version
   - which g++
   - bash build.sh
+  - export CIBW_BEFORE_BUILD='mkdir build && cd build && cmake .. && make && cd ..'
+  - export CIBW_BUILD='cp36-*'
+  - python -m cibuildwheel --output-dir wheelhouse
+
+
+after_success:
+  - |
+    if [[ $TRAVIS_TAG ]]; then
+      python3 -m pip install twine
+      python3 -m twine upload wheelhouse/*.whl
+    fi
