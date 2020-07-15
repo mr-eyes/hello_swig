@@ -56,7 +56,7 @@ script:
   - which pip
   # - swig -version
   - which g++
-  - export CIBW_BEFORE_ALL='bash build_in_docker.sh'
+  - export CIBW_BEFORE_ALL='bash scripts/build_in_docker.sh'
   - export CIBW_BUILD='cp36-*'
   - python -m cibuildwheel --output-dir wheelhouse
 
