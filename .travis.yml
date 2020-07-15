@@ -4,14 +4,14 @@ matrix:
   # This will launch a separate build for each Python version you add
   # Feel free to add extra environment variables as needed
   include:
-    - python: 3.5
+    # - python: 3.5
     - python: 3.6
 
 before_install:
   # Install the latest version of Miniconda
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda3.sh
   - chmod +x miniconda3.sh
-  - ./miniconda.sh -b
+  - ./miniconda3.sh -b
   - export PATH=/home/travis/miniconda3/bin:$PATH
   - conda update --yes conda  # Update CONDA without command line prompt
 
