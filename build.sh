@@ -22,4 +22,3 @@ cd ..
 rm -rf -f __pycache__/ build/temp* build/lib.linux* *cxx *pyc interface_wrap.cpp helloSwig.py *so helloSwig.egg-info/ interface_wrap.cpp
 
 echo "Testing .."
-tree
